@@ -12,21 +12,16 @@ const sizes = {
   height: innerHeight,
 };
 
-
 /**
  * lights
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
 scene.add(ambientLight);
 
-// const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-// directionalLight.position.set(1.5, 4, 2);
-
 /**
  * Objects
  */
-
-const fontLoader = new THREE.FontLoader()
+const fontLoader = new THREE.FontLoader();
 fontLoader.load("/fonts/Poppins-SemiBold.json", (font) => {
   const textGeometry = new THREE.TextBufferGeometry(`creative`, {
     font: font,
@@ -98,61 +93,76 @@ fontLoader.load("/fonts/Poppins-SemiBold.json", (font) => {
   scene.add(mesh4);
 });
 
-// Rimgs
+// Rings and boxes
+let itemsCount = 300;
+const ringGeometry = new THREE.TorusBufferGeometry(0.3, 0.17, 16, 120);
+const cubeGeometry = new THREE.BoxBufferGeometry(0.6, 0.6, 0.6);
+const Material = new THREE.MeshNormalMaterial();
 
-let count = 300
-const ringGeometry = new THREE.TorusBufferGeometry(0.3, 0.17, 16, 120)
-const cubeGeometry = new THREE.BoxBufferGeometry(0.6, 0.6, 0.6)
-const Material = new THREE.MeshNormalMaterial()
-
-
-for ( let i = 0; i < count; i++){
+for (let i = 0; i < itemsCount; i++) {
   const ringMesh = new THREE.Mesh(ringGeometry, Material);
-  ringMesh.position.x = Math.sin(i) + (Math.random() - 0.5) * 80
-  ringMesh.position.y = Math.sin(i) + (Math.random() - 0.5) * 80;
-  ringMesh.position.z = Math.sin(i) + (Math.random() - 0.5) * 80;
+  ringMesh.position.x = (Math.random() - 0.5) * 80;
+  ringMesh.position.y = (Math.random() - 0.5) * 80;
+  ringMesh.position.z = (Math.random() - 0.5) * 80;
 
-  // ringMesh.rotation.z = Math.sin(Math.random() * 10) * 2
-  ringMesh.rotation.y = Math.sin(Math.random() * 10) * 2
-  scene.add(ringMesh)
+  ringMesh.rotation.z = Math.sin(Math.random() * 10);
+  ringMesh.rotation.y = Math.sin(Math.random() * 10);
+  scene.add(ringMesh);
 
   const cubeMesh = new THREE.Mesh(cubeGeometry, Material);
-  cubeMesh.position.x = Math.sin(i) + (Math.random() - 0.5) * 80
-  cubeMesh.position.y = Math.sin(i) + (Math.random() - 0.5) * 80;
-  cubeMesh.position.z = Math.sin(i) + (Math.random() - 0.5) * 80;
+  cubeMesh.position.x = (Math.random() - 0.5) * 80;
+  cubeMesh.position.y = (Math.random() - 0.5) * 80;
+  cubeMesh.position.z = (Math.random() - 0.5) * 80;
 
-  // cubeMesh.rotation.z = Math.sin(Math.random() * 10) * 2
-  cubeMesh.rotation.y = Math.sin(Math.random() * 10) * 2
-  scene.add(cubeMesh)
+  cubeMesh.rotation.z = Math.sin(Math.random() * 10);
+  cubeMesh.rotation.y = Math.sin(Math.random() * 10);
+  scene.add(cubeMesh);
 }
 
+// Particles
+const particleGeometry = new THREE.BufferGeometry();
+const particleCount = 5000;
+
+const positions = new Float32Array(particleCount * 3);
+for (let i = 0; i < particleCount * 3; i++) {
+  positions[i] = (Math.random() - 0.5) * 70;
+}
+
+particleGeometry.setAttribute(
+  "position",
+  new THREE.BufferAttribute(positions, 3)
+);
+const particleMaterial = new THREE.PointsMaterial({
+  size: 0.2,
+  sizeAttenuation: true,
+});
+
+const particlePoints = new THREE.Points(particleGeometry, particleMaterial);
+scene.add(particlePoints);
 
 
 /**
  * Camera
  */
-
 const camera = new THREE.PerspectiveCamera(
   55,
   sizes.width / sizes.height,
   0.1,
   500
 );
-camera.position.set(-2, -2 ,10)
+camera.position.set(-2, -2, 10);
 
-// Shadows Camera Helper 
-// const cameraHelper  = new THREE.CameraHelper(directionalLight.shadow.camera)
-// scene.add(cameraHelper)
 
 /**
  * Renderer
  */
 const renderer = new THREE.WebGL1Renderer({
-  canvas: document.querySelector('.webgl'),
-  alpha: true
+  canvas: document.querySelector(".webgl"),
+  alpha: true,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+
 
 /**
  * Controls
@@ -160,30 +170,25 @@ renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // Smooth camera movement
 
+
 /**
  * Update Canvas on Resize
  */
 addEventListener("resize", () => {
   sizes.height = innerHeight;
   sizes.width = innerWidth;
-  
+
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
-  
+
   renderer.setSize(sizes.width, sizes.height);
 });
 
-/**
- * rendering frames
- */
-// document.body.appendChild(renderer.domElement); // add canvas to scene
-
-const clock = new THREE.Clock
+const clock = new THREE.Clock();
 function animate() {
-  const elapsedTime = clock.getElapsedTime() * 0.1
+  const elapsedTime = clock.getElapsedTime() * 0.1;
 
   renderer.render(scene, camera);
-
   controls.update();
 
   requestAnimationFrame(animate);
