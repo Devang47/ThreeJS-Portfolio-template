@@ -4,7 +4,6 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 
-
 const scene = new THREE.Scene();
 
 // Sizes
@@ -160,9 +159,7 @@ let controls = null;
 if (innerWidth <= 1024) {
   addControls();
 } else {
-  console.log("i am herer");
   camera.position.set(0, 0, 20);
-  console.log(camera.position);
 
   addEventListener("mousemove", (event) => {
     mouse.x = event.clientX / window.innerWidth - 0.5;
