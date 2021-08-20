@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +17,134 @@ body {
   top: 0;
   left: 0;
   outline: none;
-  background-image: url('../static/Pattern.jpg');
+  background-color: #ffffff;
+  background-image: url("../static/Pattern.jpg");
   background-position: center;
   background-size: cover;
+}
+
+header,
+.github_link {
+  font-family: "Roboto Slab", serif;
+
+  position: relative;
+  z-index: 10;
+}
+
+$color: #0d4690;
+$hover: #ffffff;
+
+header {
+  background-color: #ffffffa2;
+  backdrop-filter: blur(3px);
+  width: 100%;
+  padding: 10px 40px;
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 20px;
+      #nav_item_1 {
+        margin-right: auto;
+        a {
+          padding: 5px 12px;
+          font-size: 17px;
+          font-family: "Roboto Slab", serif;
+        }
+      }
+      #nav_item_3 {
+        svg {
+          height: 18px;
+        }
+      }
+      #nav_item_4 {
+        a {
+          background-color: transparent;
+          padding: 3px;
+          &::after {
+            display: none;
+            opacity: 0;
+          }
+          svg {
+            margin: 0 0 0 10px;
+            height: 100%;
+            &:hover {
+              filter: grayscale(1) brightness(0);
+            }
+            path {
+              fill: $color;
+            }
+          }
+        }
+      }
+      a {
+        font-size: 17px;
+        font-weight: 600;
+        color: $color;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+        padding: 3px 12px;
+        background-color: rgba(255, 255, 255, 0.678);
+        backdrop-filter: blur(5px);
+
+        border-radius: 4px;
+        gap: 5px;
+        overflow: hidden;
+
+        svg {
+          height: 20px;
+          &:hover {
+            path {
+              fill: $hover;
+            }
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0%;
+          left: 0;
+          height: 0%;
+          background-color: $color;
+          width: 100%;
+          transition: 0.3s ease;
+          border-radius: 4px;
+        }
+        transition: 0.3s ease;
+        &:hover {
+          color: $hover;
+          background-color: transparent;
+          &::after {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.github_link {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  background-color: transparent;
+  border: none;
+  a {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    padding: 3px 14px;
+    background-color: rgba(255, 255, 255, 0.336);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    overflow: hidden;
+  }
 }
