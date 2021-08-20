@@ -7,7 +7,6 @@ import * as dat from "dat.gui";
 /**
  * GUI
  */
-const gui = new dat.GUI();
 const params = {};
 
 const scene = new THREE.Scene();
@@ -27,7 +26,7 @@ const mouse = new THREE.Vector2();
 const fontLoader = new THREE.FontLoader();
 fontLoader.load("/fonts/Poppins-SemiBold.json", (font) => {
   const material = new THREE.MeshNormalMaterial();
-  
+
   const sentence = "creative developer awesome designs";
   const data = {
     words: sentence.split(" "),
@@ -111,17 +110,6 @@ function addObjects() {
   scene.add(objectGroup);
 }
 addObjects();
-
-// gui.add(params, "count").min(200).max(2000).step(1).onFinishChange(addObjects);
-
-// gui.add(params, "size").min(20).max(200).step(0.1).onFinishChange(addObjects);
-
-// gui
-//   .add(params, "rotation")
-//   .min(0)
-//   .max(30)
-//   .step(0.01)
-//   .onFinishChange(addObjects);
 
 // Particles
 const particleGeometry = new THREE.BufferGeometry();
