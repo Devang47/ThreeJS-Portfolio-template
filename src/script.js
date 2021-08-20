@@ -3,7 +3,6 @@ import "./style.scss";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-
 const scene = new THREE.Scene();
 
 // Sizes
@@ -21,7 +20,6 @@ const mouse = new THREE.Vector2();
 const fontLoader = new THREE.FontLoader();
 fontLoader.load("/fonts/Poppins-SemiBold.json", (font) => {
   const material = new THREE.MeshNormalMaterial();
-
   const sentence = "creative developer awesome designs";
   const data = {
     words: sentence.split(" "),
@@ -225,7 +223,6 @@ function animate() {
 
     camera.position.x += 0.1 * (target.x - camera.position.x);
     camera.position.y += 0.1 * (target.y - camera.position.y);
-
     camera.lookAt(new THREE.Vector3());
   }
   renderer.render(scene, camera);
