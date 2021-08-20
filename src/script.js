@@ -3,10 +3,7 @@ import "./style.scss";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-/**
- * GUI
- */
-const params = {};
+
 
 const scene = new THREE.Scene();
 
@@ -59,6 +56,7 @@ fontLoader.load("/fonts/Poppins-SemiBold.json", (font) => {
 });
 
 // Rings and boxes
+const params = {};
 params.count = 500;
 params.size = 88;
 params.rotation = 10;
