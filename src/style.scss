@@ -52,11 +52,6 @@ header {
           font-family: "Roboto Slab", serif;
         }
       }
-      #nav_item_3 {
-        svg {
-          height: 18px;
-        }
-      }
       #nav_item_4 {
         a {
           background-color: transparent;
@@ -94,7 +89,6 @@ header {
         border-radius: 4px;
         gap: 5px;
         overflow: hidden;
-
         svg {
           height: 20px;
           &:hover {
@@ -128,6 +122,11 @@ header {
   }
 }
 
+#nav_item_2,
+#nav_item_3 {
+  display: none;
+}
+
 .github_link {
   position: absolute;
   bottom: 30px;
@@ -144,5 +143,17 @@ header {
     backdrop-filter: blur(5px);
     border-radius: 4px;
     overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #nav_item_2,
+  #nav_item_3 {
+    display: block;
+  }
+  #nav_item_3 {
+    svg {
+      height: 18px;
+    }
   }
 }

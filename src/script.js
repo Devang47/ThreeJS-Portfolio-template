@@ -200,6 +200,7 @@ addEventListener("resize", () => {
   renderer.setSize(sizes.width, sizes.height);
 
   if (innerWidth <= 1024) {
+    disposeMobileControls();
     addControls();
   } else {
     disposeMobileControls();
