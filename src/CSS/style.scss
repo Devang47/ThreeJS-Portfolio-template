@@ -63,8 +63,9 @@ header {
           transition: 0.1s ease;
           border-radius: 50%;
           background-color: rgba(255, 255, 255, 0.678);
-          border: 1px solid white;
-
+          border: 1px solid rgb(255, 255, 255);
+          max-width: 37.66;
+          max-height: 37.66;
           &::after {
             display: none;
             opacity: 0;

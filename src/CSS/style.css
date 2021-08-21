@@ -72,6 +72,8 @@ header nav ul #nav_item_4 a {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.678);
   border: 1px solid white;
+  max-width: 37.66;
+  max-height: 37.66;
 }
 
 header nav ul #nav_item_4 a::after {
