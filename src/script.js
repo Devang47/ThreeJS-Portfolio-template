@@ -1,4 +1,5 @@
 import "./CSS/style.css";
+import "./CSS/normalize.css";
 
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";

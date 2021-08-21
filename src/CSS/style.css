@@ -119,6 +119,7 @@ header nav ul a {
   gap: 5px;
   overflow: hidden;
   border: 1px solid white;
+  white-space: nowrap;
   -webkit-box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03);
           box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03);
   -webkit-transition: 0.3s ease;
@@ -180,6 +181,7 @@ header nav ul a:hover::after {
           backdrop-filter: blur(5px);
   border-radius: 4px;
   overflow: hidden;
+  border: 1px solid white;
   -webkit-box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03), inset 0 0px 0.9px rgba(0, 0, 0, 0.008), inset 0 0px 2.1px rgba(255, 255, 255, 0.012), inset 0 0px 4px rgba(255, 255, 255, 0.015), inset 0 0px 7.1px rgba(255, 255, 255, 0.018), inset 0 0px 13.4px rgba(255, 255, 255, 0.022), inset 0 0px 32px rgba(255, 255, 255, 0.03);
           box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03), inset 0 0px 0.9px rgba(0, 0, 0, 0.008), inset 0 0px 2.1px rgba(255, 255, 255, 0.012), inset 0 0px 4px rgba(255, 255, 255, 0.015), inset 0 0px 7.1px rgba(255, 255, 255, 0.018), inset 0 0px 13.4px rgba(255, 255, 255, 0.022), inset 0 0px 32px rgba(255, 255, 255, 0.03);
 }
