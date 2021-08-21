@@ -32,8 +32,9 @@ header,
 
 header {
   background-color: #ffffffa2;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border: 1px solid white;
   width: 100%;
   padding: 10px 40px;
 }
@@ -55,17 +56,23 @@ header nav ul #nav_item_1 {
 
 header nav ul #nav_item_1 a {
   font-weight: 700;
-  padding: 5px 12px;
+  padding: 6px 12px;
   font-size: 18px;
   font-family: "Roboto Slab", serif;
 }
 
 header nav ul #nav_item_4 a {
   background-color: transparent;
-  padding: 3px 5px;
+  padding: 4px 8px;
   display: -ms-grid;
   display: grid;
   place-items: center;
+  max-width: 37px;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.678);
+  border: 1px solid white;
 }
 
 header nav ul #nav_item_4 a::after {
@@ -73,21 +80,28 @@ header nav ul #nav_item_4 a::after {
   opacity: 0;
 }
 
+header nav ul #nav_item_4 a:hover {
+  background-color: #0d4690;
+}
+
+header nav ul #nav_item_4 a:hover svg path {
+  fill: white;
+}
+
 header nav ul #nav_item_4 a svg {
   height: 100%;
+  max-height: 35px;
+  max-width: 35px;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-header nav ul #nav_item_4 a svg:hover {
-  -webkit-filter: grayscale(1) brightness(0);
-          filter: grayscale(1) brightness(0);
-}
-
 header nav ul #nav_item_4 a svg path {
   fill: #0d4690;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
 }
 
 header nav ul a {
@@ -111,10 +125,9 @@ header nav ul a {
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  padding: 3px 12px;
+  padding: 5px 12px;
   background-color: rgba(255, 255, 255, 0.678);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  letter-spacing: 1px;
   border-radius: 4px;
   gap: 5px;
   overflow: hidden;
@@ -173,7 +186,7 @@ header nav ul a:hover::after {
 .github_link a {
   font-size: 15px;
   font-weight: 600;
-  color: #6e6e6e;
+  color: #426592;
   text-decoration: none;
   padding: 3px 14px;
   background-color: rgba(255, 255, 255, 0.336);
@@ -182,6 +195,8 @@ header nav ul a:hover::after {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid white;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
   -webkit-box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03), inset 0 0px 0.9px rgba(0, 0, 0, 0.008), inset 0 0px 2.1px rgba(255, 255, 255, 0.012), inset 0 0px 4px rgba(255, 255, 255, 0.015), inset 0 0px 7.1px rgba(255, 255, 255, 0.018), inset 0 0px 13.4px rgba(255, 255, 255, 0.022), inset 0 0px 32px rgba(255, 255, 255, 0.03);
           box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03), inset 0 0px 0.9px rgba(0, 0, 0, 0.008), inset 0 0px 2.1px rgba(255, 255, 255, 0.012), inset 0 0px 4px rgba(255, 255, 255, 0.015), inset 0 0px 7.1px rgba(255, 255, 255, 0.018), inset 0 0px 13.4px rgba(255, 255, 255, 0.022), inset 0 0px 32px rgba(255, 255, 255, 0.03);
 }
