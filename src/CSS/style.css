@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+  background-color: #ffffff;
+  background-image: url("../../static/Pattern.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+header,
+.github_link {
+  font-family: "Roboto Slab", serif;
+  position: relative;
+  z-index: 10;
+}
+
+header {
+  background-color: #ffffffa2;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  width: 100%;
+  padding: 10px 40px;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+header nav ul #nav_item_1 {
+  margin-right: auto;
+}
+
+header nav ul #nav_item_1 a {
+  font-weight: 700;
+  padding: 5px 12px;
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+}
+
+header nav ul #nav_item_4 a {
+  background-color: transparent;
+  padding: 3px 5px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+header nav ul #nav_item_4 a::after {
+  display: none;
+  opacity: 0;
+}
+
+header nav ul #nav_item_4 a svg {
+  height: 100%;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+header nav ul #nav_item_4 a svg:hover {
+  -webkit-filter: grayscale(1) brightness(0);
+          filter: grayscale(1) brightness(0);
+}
+
+header nav ul #nav_item_4 a svg path {
+  fill: #0d4690;
+}
+
+header nav ul a {
+  font-size: 17px;
+  font-weight: 600;
+  color: #0d4690;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  padding: 3px 12px;
+  background-color: rgba(255, 255, 255, 0.678);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 4px;
+  gap: 5px;
+  overflow: hidden;
+  border: 1px solid white;
+  -webkit-box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header nav ul a svg {
+  height: 20px;
+}
+
+header nav ul a svg:hover path {
+  fill: #ffffff;
+}
+
+header nav ul a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0%;
+  left: 0;
+  height: 0%;
+  background-color: #0d4690;
+  width: 100%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border-radius: 4px;
+}
+
+header nav ul a:hover {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+header nav ul a:hover::after {
+  height: 100%;
+}
+
+#nav_item_2,
+#nav_item_3 {
+  display: none;
+}
+
+.github_link {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.github_link a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #6e6e6e;
+  text-decoration: none;
+  padding: 3px 14px;
+  background-color: rgba(255, 255, 255, 0.336);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03), inset 0 0px 0.9px rgba(0, 0, 0, 0.008), inset 0 0px 2.1px rgba(255, 255, 255, 0.012), inset 0 0px 4px rgba(255, 255, 255, 0.015), inset 0 0px 7.1px rgba(255, 255, 255, 0.018), inset 0 0px 13.4px rgba(255, 255, 255, 0.022), inset 0 0px 32px rgba(255, 255, 255, 0.03);
+          box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008), 0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015), 0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022), 0 0px 32px rgba(0, 0, 0, 0.03), inset 0 0px 0.9px rgba(0, 0, 0, 0.008), inset 0 0px 2.1px rgba(255, 255, 255, 0.012), inset 0 0px 4px rgba(255, 255, 255, 0.015), inset 0 0px 7.1px rgba(255, 255, 255, 0.018), inset 0 0px 13.4px rgba(255, 255, 255, 0.022), inset 0 0px 32px rgba(255, 255, 255, 0.03);
+}
+
+.github_link a:hover {
+  color: #0d4690;
+}
+
+@media screen and (min-width: 700px) {
+  #nav_item_2,
+  #nav_item_3 {
+    display: block;
+  }
+  #nav_item_3 svg {
+    height: 18px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

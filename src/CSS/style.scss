@@ -18,7 +18,7 @@ body {
   left: 0;
   outline: none;
   background-color: #ffffff;
-  background-image: url("../static/Pattern.jpg");
+  background-image: url("../../static/Pattern.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -47,22 +47,26 @@ header {
       #nav_item_1 {
         margin-right: auto;
         a {
+          font-weight: 700;
           padding: 5px 12px;
-          font-size: 17px;
+          font-size: 18px;
           font-family: "Roboto Slab", serif;
         }
       }
       #nav_item_4 {
         a {
           background-color: transparent;
-          padding: 3px;
+          padding: 3px 5px;
+          display: grid;
+          place-items: center;
           &::after {
             display: none;
             opacity: 0;
           }
           svg {
-            margin: 0 0 0 10px;
             height: 100%;
+            display: block;
+            width: fit-content;
             &:hover {
               filter: grayscale(1) brightness(0);
             }
@@ -89,6 +93,11 @@ header {
         border-radius: 4px;
         gap: 5px;
         overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0 0px 0.9px rgba(0, 0, 0, 0.008),
+          0 0px 2.1px rgba(0, 0, 0, 0.012), 0 0px 4px rgba(0, 0, 0, 0.015),
+          0 0px 7.1px rgba(0, 0, 0, 0.018), 0 0px 13.4px rgba(0, 0, 0, 0.022),
+          0 0px 32px rgba(0, 0, 0, 0.03);
         svg {
           height: 20px;
           &:hover {
@@ -136,13 +145,29 @@ header {
   a {
     font-size: 15px;
     font-weight: 600;
-    color: black;
+    color: rgb(110, 110, 110);
     text-decoration: none;
     padding: 3px 14px;
     background-color: rgba(255, 255, 255, 0.336);
     backdrop-filter: blur(5px);
     border-radius: 4px;
     overflow: hidden;
+    box-shadow: 
+      0 0px 0.9px rgba(0, 0, 0, 0.008),
+      0 0px 2.1px rgba(0, 0, 0, 0.012), 
+      0 0px 4px rgba(0, 0, 0, 0.015),
+      0 0px 7.1px rgba(0, 0, 0, 0.018), 
+      0 0px 13.4px rgba(0, 0, 0, 0.022),
+      0 0px 32px rgba(0, 0, 0, 0.03),
+      inset 0 0px 0.9px rgba(0, 0, 0, 0.008),
+      inset 0 0px 2.1px rgba(255, 255, 255, 0.012),
+      inset 0 0px 4px rgba(255, 255, 255, 0.015),
+      inset 0 0px 7.1px rgba(255, 255, 255, 0.018),
+      inset 0 0px 13.4px rgba(255, 255, 255, 0.022),
+      inset 0 0px 32px rgba(255, 255, 255, 0.03);
+    &:hover {
+      color: $color;
+    }
   }
 }
 
