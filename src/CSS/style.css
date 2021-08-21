@@ -36,7 +36,7 @@ header {
           backdrop-filter: blur(2px);
   border: 1px solid white;
   width: 100%;
-  padding: 10px 40px;
+  padding: 6px 20px;
 }
 
 header nav ul {
@@ -174,8 +174,8 @@ header nav ul a:hover::after {
 
 .github_link {
   position: absolute;
-  bottom: 30px;
-  right: 40px;
+  right: 20px;
+  bottom: 20px;
   background-color: transparent;
   border: none;
 }
@@ -203,12 +203,19 @@ header nav ul a:hover::after {
 }
 
 @media screen and (min-width: 700px) {
+  header {
+    padding: 10px 40px;
+  }
   #nav_item_2,
   #nav_item_3 {
     display: block;
   }
   #nav_item_3 svg {
     height: 18px;
+  }
+  .github_link {
+    bottom: 30px;
+    right: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */

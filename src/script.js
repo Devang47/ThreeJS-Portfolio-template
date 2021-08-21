@@ -88,8 +88,9 @@ function addObjects() {
     ringMesh.position.y = (Math.random() - 0.5) * params.size;
     ringMesh.position.z = (Math.random() - 0.5) * params.size;
 
-    ringMesh.rotation.z = Math.sin(params.rotation);
-    ringMesh.rotation.y = Math.sin(params.rotation);
+    ringMesh.rotation.z = Math.sin(Math.random() * params.rotation);
+    ringMesh.rotation.y = Math.cos(Math.random() * params.rotation);
+    ringMesh.rotation.x = Math.sin(Math.random() * params.rotation);
     objectGroup.add(ringMesh);
 
     cubeMesh = new THREE.Mesh(cubeGeometry, Material);
@@ -98,7 +99,7 @@ function addObjects() {
     cubeMesh.position.z = (Math.random() - 0.5) * params.size;
 
     cubeMesh.rotation.z = Math.sin(Math.random() * params.rotation);
-    cubeMesh.rotation.y = Math.sin(Math.random() * params.rotation);
+    cubeMesh.rotation.y = Math.cos(Math.random() * params.rotation);
     objectGroup.add(cubeMesh);
   }
   scene.add(objectGroup);
