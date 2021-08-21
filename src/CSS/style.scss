@@ -57,10 +57,9 @@ header {
       #nav_item_4 {
         a {
           background-color: transparent;
-          padding: 4px 8px;
+          padding: 4px;
           display: grid;
           place-items: center;
-          max-width: 37px;
           transition: 0.1s ease;
           border-radius: 50%;
           background-color: rgba(255, 255, 255, 0.678);
@@ -81,7 +80,6 @@ header {
           svg {
             height: 100%;
             max-height: 35px;
-            max-width: 35px;
             display: block;
             width: fit-content;
             path {
@@ -104,7 +102,6 @@ header {
         position: relative;
         padding: 5px 12px;
         background-color: rgba(255, 255, 255, 0.678);
-        letter-spacing: 1px;
         border-radius: 4px;
         gap: 5px;
         overflow: hidden;
