@@ -108,7 +108,7 @@ addObjects();
 
 // Particles
 const particleGeometry = new THREE.BufferGeometry();
-const particleCount = 500;
+const particleCount = 800;
 
 const positions = new Float32Array(particleCount * 3);
 for (let i = 0; i < particleCount * 3; i++) {
@@ -150,6 +150,9 @@ const renderer = new THREE.WebGL1Renderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.physicallyCorrectLights = true;
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
 
 /**
  * Controls
@@ -215,14 +218,29 @@ addEventListener("resize", () => {
   }
 });
 
+const clock = new THREE.Clock();
+
 function animate() {
+  const elapsedTime = clock.getElapsedTime();
+
+  if (objectGroup !== null) {
+    objectGroup.rotation.y += Math.sin(elapsedTime) * 0.01;
+    objectGroup.rotation.x += Math.sin(elapsedTime) * 0.01;
+
+    camera.position.x += Math.sin(elapsedTime) * 3;
+    camera.position.y += Math.sin(-elapsedTime) * 3;
+    camera.position.z += Math.sin(elapsedTime) * 0.05;
+
+    particlePoints.rotation.y += Math.sin(elapsedTime) * 0.01;
+    particlePoints.rotation.x += Math.cos(elapsedTime) * 0.01;
+  }
   if (innerWidth <= 1024) {
     controls.update();
   } else {
     disposeMobileControls();
 
-    target.x = mouse.x * 26;
-    target.y = mouse.y * 26;
+    target.x = mouse.x * 50;
+    target.y = mouse.y * 50;
 
     camera.position.x += 0.1 * (target.x - camera.position.x);
     camera.position.y += 0.1 * (target.y - camera.position.y);
