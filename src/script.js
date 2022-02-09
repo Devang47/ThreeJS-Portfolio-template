@@ -227,8 +227,10 @@ function animate() {
     objectGroup.rotation.y += Math.sin(elapsedTime) * 0.01;
     objectGroup.rotation.x += Math.sin(elapsedTime) * 0.01;
 
-    camera.position.x += Math.sin(elapsedTime) * 3;
-    camera.position.y += Math.sin(-elapsedTime) * 3;
+    if (innerWidth >= 1024) {
+      camera.position.x += Math.sin(elapsedTime) * 3;
+      camera.position.y += Math.sin(-elapsedTime) * 3;
+    }
     camera.position.z += Math.sin(elapsedTime) * 0.05;
 
     particlePoints.rotation.y += Math.sin(elapsedTime) * 0.01;
